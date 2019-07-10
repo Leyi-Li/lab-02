@@ -7,7 +7,7 @@
 
 function loadPhotos() {
   const success = photos => displayPhotos(photos);
-  const success2 = photos => addKeyWord(photos);
+  const success2 = photos => appendDrop(photos);
   const failure = error => console.error(error);
   $.get('./data/page-1.json',(photos)=>{
     if(photos.length){
@@ -58,9 +58,11 @@ function addKeyWord(photos){
   });
 }
 
-function appendDrop(){
-  function addKeyWord(photos);
-  
+function appendDrop(photos){
+  addKeyWord(photos);
+  for (let i = 0; i < listOfDrop.length; i++){
+    $('select').append(listOfDrop[i]);
+  }
 }
 
 // startPage();
