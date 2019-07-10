@@ -2,13 +2,13 @@
 
 1. Disyplay images
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1hr
 
-Start time: _____
+Start time: 9:50
 
-Finish time: _____
+Finish time: 11:53
 
-Actual time needed to complete: _____
+Actual time needed to complete: around 2hrs
 
 
 2. Filter images
