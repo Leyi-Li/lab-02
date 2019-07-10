@@ -66,3 +66,5 @@ function appendDrop(){
 // startPage();
 // loadPhotos();
 $().ready((loadPhotos));
+
+console.log();
