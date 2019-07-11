@@ -13,13 +13,13 @@ Actual time needed to complete: around 2hrs
 
 2. Filter images
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2hrs
 
-Start time: _____
+Start time: 12:00
 
-Finish time: _____
+Finish time: 2:15
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2hrs
 
 3. Style the application
 
