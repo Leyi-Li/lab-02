@@ -1,9 +1,9 @@
 'use strict';
 
-// function startPage() {
-//   loadPhotos();
-//   attachListeners();
-// }
+function startPage() {
+  loadPhotos();
+  attachListeners();
+}
 
 function loadPhotos() {
   const success = photos => displayPhotos(photos);
@@ -42,7 +42,7 @@ function displayPhotos(photos){
     const $newPhoto = $('#photo-template').clone();
     $newPhoto.find('h2').text(CreatePhotos.photoList[i].photoName);
     $newPhoto.find('img').attr('src',CreatePhotos.photoList[i].path).attr('alt',CreatePhotos.photoList[i].alt);
-    $newPhoto.find('p').text(CreatePhotos.photoList[i].photoKey); 
+    $newPhoto.find('p').text(CreatePhotos.photoList[i].photoKey);
     $('main').append($newPhoto);
   }
 }
@@ -52,6 +52,8 @@ function addKeyWord(photos){
   photos.forEach(photo =>{
     const $newDrop = $('.dropSelect').clone();
     $newDrop.text(photo.keyword);
+    $newDrop.attr('value',photo.keyword);
+    // $newDrop.removeClass('.dropSelect');
     listOfDrop.push($newDrop);
     // console.log($('.dropBox'),$('.dropSelect'));
     // $('.dropBox').append($newDrop);
@@ -65,8 +67,25 @@ function appendDrop(photos){
   }
 }
 
-// startPage();
-// loadPhotos();
-$().ready((loadPhotos));
+function attachListeners(){
+  $('select').on('change',event=>{
+    const $choice = $(event.target);
+    const value = $choice.val();
+    if(value === 'default'){
+      $('section').show();
+    }else{
+      $('section').each(function(){
+        const $currentSection = $(this);
+        let picText = $currentSection.find('p').text();
+        if(picText === value){
+          $currentSection.show();
+        }else{
+          $currentSection.hide();
+        }
+      });
+    }
+  });
+}
 
-console.log();
+$().ready((startPage));
+
